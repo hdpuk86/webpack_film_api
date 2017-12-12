@@ -3,6 +3,4 @@ var router = new express.Router();
 
 router.use('/films', require('./films'));
 
-
-
 module.exports = router;

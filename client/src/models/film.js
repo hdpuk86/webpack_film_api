@@ -1,5 +1,6 @@
 var Film = function(options){
   this.title = options.title;
+  this.genre = options.genre;
   this.actors = options.actors;
   this.reviews = options.reviews || [];
 }

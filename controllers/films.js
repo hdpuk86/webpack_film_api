@@ -25,7 +25,8 @@ filmRouter.get('/:id', function(req, res){
 
 //update a film
 filmRouter.put('/:id', function(req, res){
-  films[req.params.id] = req.body.film;
+  var newFilm = new Film(req.body.film);
+  films[req.params.id] = newFilm;
   res.json(films);
 });
 
@@ -36,7 +37,7 @@ filmRouter.delete('/:id', function(req, res){
 });
 
 //add a review to a film
-filmRouter.patch('/:id/review', function(req, res){
+filmRouter.patch('/review/:id', function(req, res){
   var review = new Review(req.body.review);
   films[req.params.id].addReview(review);
   res.json(films);
